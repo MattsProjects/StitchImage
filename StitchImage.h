@@ -64,7 +64,7 @@ namespace StitchImage
 
 // *********************************************************************************************************
 // DEFINITIONS
-int StitchImage::StitchToBottom(Pylon::CPylonImage &topImage, Pylon::CPylonImage &bottomImage, Pylon::CPylonImage *stitchedImage, std::string &errorMessage)
+inline int StitchImage::StitchToBottom(Pylon::CPylonImage &topImage, Pylon::CPylonImage &bottomImage, Pylon::CPylonImage *stitchedImage, std::string &errorMessage)
 {
 	errorMessage = "ERROR: ";
 	errorMessage.append(__FUNCTION__);
@@ -159,7 +159,7 @@ int StitchImage::StitchToBottom(Pylon::CPylonImage &topImage, Pylon::CPylonImage
 	}
 }
 
-int StitchImage::StitchToRight(Pylon::CPylonImage &leftImage, Pylon::CPylonImage &rightImage, Pylon::CPylonImage *stitchedImage, std::string &errorMessage)
+inline int StitchImage::StitchToRight(Pylon::CPylonImage &leftImage, Pylon::CPylonImage &rightImage, Pylon::CPylonImage *stitchedImage, std::string &errorMessage)
 {
 	errorMessage = "ERROR: ";
 	errorMessage.append(__FUNCTION__);
@@ -263,17 +263,17 @@ int StitchImage::StitchToRight(Pylon::CPylonImage &leftImage, Pylon::CPylonImage
 	}
 }
 
-StitchImage::CollageMaker::CollageMaker()
+inline StitchImage::CollageMaker::CollageMaker()
 {
 	// nothing
 }
 
-StitchImage::CollageMaker::~CollageMaker()
+inline StitchImage::CollageMaker::~CollageMaker()
 {
 	// nothing
 }
 
-int StitchImage::CollageMaker::StitchToCollage(Pylon::CPylonImage &image, std::string &errorMessage)
+inline int StitchImage::CollageMaker::StitchToCollage(Pylon::CPylonImage &image, std::string &errorMessage)
 {
 	errorMessage = "ERROR: ";
 	errorMessage.append(__FUNCTION__);
@@ -332,7 +332,7 @@ int StitchImage::CollageMaker::StitchToCollage(Pylon::CPylonImage &image, std::s
 	}
 }
 
-int StitchImage::CollageMaker::GetLatestCollage(Pylon::CPylonImage *collageImage, std::string &errorMessage)
+inline int StitchImage::CollageMaker::GetLatestCollage(Pylon::CPylonImage *collageImage, std::string &errorMessage)
 {
 	errorMessage = "ERROR: ";
 	errorMessage.append(__FUNCTION__);
@@ -371,7 +371,7 @@ int StitchImage::CollageMaker::GetLatestCollage(Pylon::CPylonImage *collageImage
 	}
 }
 
-int StitchImage::CollageMaker::ResetCollage(std::string &errorMessage)
+inline int StitchImage::CollageMaker::ResetCollage(std::string &errorMessage)
 {
 	errorMessage = "ERROR: ";
 	errorMessage.append(__FUNCTION__);
@@ -407,27 +407,27 @@ int StitchImage::CollageMaker::ResetCollage(std::string &errorMessage)
 	}
 }
 
-int StitchImage::CollageMaker::GetWidth()
+inline int StitchImage::CollageMaker::GetWidth()
 {
 	return m_collageWidth;
 }
 
-int StitchImage::CollageMaker::GetHeight()
+inline int StitchImage::CollageMaker::GetHeight()
 {
 	return m_collageHeight;
 }
 
-void StitchImage::CollageMaker::SetWidth(int numImages)
+inline void StitchImage::CollageMaker::SetWidth(int numImages)
 {
 	m_collageWidth = numImages;
 }
 
-void StitchImage::CollageMaker::SetHeight(int numImages)
+inline void StitchImage::CollageMaker::SetHeight(int numImages)
 {
 	m_collageHeight = numImages;
 }
 
-bool StitchImage::CollageMaker::IsCollageComplete()
+inline bool StitchImage::CollageMaker::IsCollageComplete()
 {
 	return m_collageComplete;
 }
