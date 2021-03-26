@@ -176,6 +176,12 @@ inline int StitchImage::StitchToRight(Pylon::CPylonImage &leftImage, Pylon::CPyl
 			errorMessage.append("Packed pixel formats are not supported yet");
 			return 1;
 		}
+		
+		if (Pylon::IsPlanar(leftImage.GetPixelType()) == true || Pylon::IsPlanar(rightImage.GetPixelType()) == true)
+		{
+			errorMessage.append("Planar pixel formats are not supported yet");
+			return 1;
+		}
 
 		if (leftImage.GetPixelType() == Pylon::EPixelType::PixelType_Undefined)
 		{
